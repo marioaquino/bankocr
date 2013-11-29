@@ -35,6 +35,12 @@ module Characters
     '|_|'
   end
 
+  def self.seven
+    ' _ ' +
+    '  |' +
+    '  |'
+  end
+
   def self.[](key)
     {
       one   => '1',
@@ -42,7 +48,8 @@ module Characters
       three => '3',
       four  => '4',
       five  => '5',
-      six   => '6'
+      six   => '6',
+      seven => '7'
     }[key]
   end
 end
