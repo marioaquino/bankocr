@@ -22,4 +22,14 @@ describe Parser do
     end
     it { should == '222222222' }
   end
+
+  context 'when the text is a series of 3s' do
+    let(:lines) do [
+      " _  _  _  _  _  _  _  _  _ ",
+      " _| _| _| _| _| _| _| _| _|",
+      " _| _| _| _| _| _| _| _| _|"
+    ]
+    end
+    it { should == '333333333' }
+  end
 end
