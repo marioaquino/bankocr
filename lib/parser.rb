@@ -9,9 +9,16 @@ module Parser
     '  |'
   end
 
+  def self.two
+    ' _ ' +
+    ' _|' +
+    '|_ '
+  end
+
   def self.characters
     {
-      one => '1'
+      one => '1',
+      two => '2'
     }
   end
 
