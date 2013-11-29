@@ -92,4 +92,14 @@ describe Parser do
     end
     it { should == '999999999' }
   end
+
+  context 'when the text is a series of 0s' do
+    let(:lines) do [
+      " _  _  _  _  _  _  _  _  _ ",
+      "| || || || || || || || || |",
+      "|_||_||_||_||_||_||_||_||_|"
+    ]
+    end
+    it { should == '000000000' }
+  end
 end
