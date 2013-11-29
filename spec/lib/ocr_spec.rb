@@ -27,7 +27,9 @@ describe OCR do
   end
 
   context 'reading from a non-empty file' do
-    let(:line) { "\n" }
+    let(:space) { ' ' }
+    let(:line_ending) { "\n" }
+    let(:line) { space + line_ending }
     let(:call_accumulator) { [] }
     let(:account_parser) { -> (lines) { call_accumulator << lines } }
     let(:populate_file) { ->(file) { file.write line * 8 } }
@@ -35,7 +37,7 @@ describe OCR do
     before { subject }
 
     it 'passes lines in groups of 3 to the account number parser, leaving off the blank line' do
-      call_accumulator.should == [[line, line, line], [line, line, line], nil]
+      call_accumulator.should == [[space, space, space], [space, space, space], nil]
     end
   end
 end
