@@ -72,4 +72,24 @@ describe Parser do
     end
     it { should == '777777777' }
   end
+
+  context 'when the text is a series of 8s' do
+    let(:lines) do [
+      " _  _  _  _  _  _  _  _  _ ",
+      "|_||_||_||_||_||_||_||_||_|",
+      "|_||_||_||_||_||_||_||_||_|"
+    ]
+    end
+    it { should == '888888888' }
+  end
+
+  context 'when the text is a series of 9s' do
+    let(:lines) do [
+      " _  _  _  _  _  _  _  _  _ ",
+      "|_||_||_||_||_||_||_||_||_|",
+      " _| _| _| _| _| _| _| _| _|"
+    ]
+    end
+    it { should == '999999999' }
+  end
 end
