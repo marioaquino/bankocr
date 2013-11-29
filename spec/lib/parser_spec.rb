@@ -32,4 +32,14 @@ describe Parser do
     end
     it { should == '333333333' }
   end
+
+  context 'when the text is a series of 4s' do
+    let(:lines) do [
+      "                           ",
+      "|_||_||_||_||_||_||_||_||_|",
+      "  |  |  |  |  |  |  |  |  |"
+    ]
+    end
+    it { should == '444444444' }
+  end
 end
